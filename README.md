@@ -15,5 +15,7 @@ http://localhost:8081/openFoodFacts/postfoods
 Et récupérer le JSON de notre nouvelle liste avec  
 http://localhost:8081/openFoodFacts/getfoods  
 
-Sûrement encore des truc à faire, laissez un mot sur discord si jamais
-GROBISOUS
+Sûrement encore des truc à faire, laissez un mot sur discord si jamais  
+
+
+# GROBISOUS
