@@ -5,6 +5,7 @@ Lire le fichier JSON ou CSV avec Apache Spark. Identifier les colonnes clés
 """
 from pyspark.sql import SparkSession
 import matplotlib.pyplot as plt
+from pyspark.sql.functions import col, split, avg
 
 # Créer une SparkSession
 spark = SparkSession.builder \
@@ -30,7 +31,7 @@ df_csv.printSchema()
 """
 Supprimer les lignes avec des valeurs manquantes ou aberrantes. Traiter les doublons sur les produits (product_id ou product_name).
 """
-from pyspark.sql.functions import col
+
 
 columns_to_keep = [
     "product_name",  # Nom du produit (ex. : "Pâtes complètes").
@@ -105,7 +106,7 @@ Extraire des informations pertinentes des colonnes complexes,
  (e.g., unités des nutriments en grammes ou millilitres).
 """
 
-from pyspark.sql.functions import col, split, avg
+
 
 # Extraire la première catégorie
 df_clean = df_clean.withColumn("main_category", split(col("categories_tags"), ",").getItem(0))
