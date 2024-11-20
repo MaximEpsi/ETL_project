@@ -75,30 +75,26 @@ df_clean = df_filtered.na.fill(0, [
 df_clean.printSchema() # verification de la conversion de type
 
 
+# ============================ REMOVE THIS CAUSE USELESS =================================
 # Liste des colonnes numériques
-numeric_columns = [
-    "quantity", "serving_quantity", "nutriscore_score", "ecoscore_score",
-    "energy-kj_100g", "energy-kcal_100g", "sugars_100g", "fiber_100g",
-    "proteins_100g", "salt_100g", "fat_100g", "saturated-fat_100g"
-]
-
-
-outliers = {}
-
-for column in numeric_columns:
-    quantiles = df_clean.approxQuantile(column, [0.25, 0.75], 0.01)  # Précision à 1%
-    q1, q3 = quantiles[0], quantiles[1]
-    iqr = q3 - q1
-    lower_bound = q1 - 1.5 * iqr
-    upper_bound = q3 + 1.5 * iqr
-
-    # Filtrer les valeurs aberrantes
-    outliers[column] = df_clean.filter((col(column) < lower_bound) | (col(column) > upper_bound))
-
-    print(f"Valeurs aberrantes pour la colonne '{column}':")
-    outliers[column].show(5)
-
-
+# numeric_columns = [
+#     "quantity", "serving_quantity", "nutriscore_score", "ecoscore_score",
+#     "energy-kj_100g", "energy-kcal_100g", "sugars_100g", "fiber_100g",
+#     "proteins_100g", "salt_100g", "fat_100g", "saturated-fat_100g"
+# ]
+# outliers = {}
+# for column in numeric_columns:
+#     quantiles = df_clean.approxQuantile(column, [0.25, 0.75], 0.01)  # Précision à 1%
+#     q1, q3 = quantiles[0], quantiles[1]
+#     iqr = q3 - q1
+#     lower_bound = q1 - 1.5 * iqr
+#     upper_bound = q3 + 1.5 * iqr
+#
+#     # Filtrer les valeurs aberrantes
+#     outliers[column] = df_clean.filter((col(column) < lower_bound) | (col(column) > upper_bound))
+#
+#     print(f"Valeurs aberrantes pour la colonne '{column}':")
+#     outliers[column].show(5)
 #%% Normalisation des colonnes :
 """
 Extraire des informations pertinentes des colonnes complexes,
