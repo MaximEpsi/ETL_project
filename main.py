@@ -29,7 +29,8 @@ df_csv.printSchema()
 
 # %% Nettoyage des données :
 """
-Supprimer les lignes avec des valeurs manquantes ou aberrantes. Traiter les doublons sur les produits (product_id ou product_name).
+Supprimer les lignes avec des valeurs manquantes. Traiter les doublons sur les produits (product_id ou product_name).
+Hey les gars, j'ai l'impression les valeurs abérantes elle ont pas de sens, j'ai retiré cette partie
 """
 
 
