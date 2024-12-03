@@ -19,3 +19,5 @@ six @ file:///tmp/build/80754af9/six_1644875935023/work
 tornado @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_7e0ruwlfee/croot/tornado_1718740118099/work
 tzdata @ file:///croot/python-tzdata_1690578112552/work
 unicodedata2 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1anajuo38r/croot/unicodedata2_1713212953928/work
+
+pyspark~=3.5.3
